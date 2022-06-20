@@ -123,10 +123,11 @@ const createProduct = asyncHandler(async (req, res) => {
   // });
 
   const product = new Product({
-    name: "Dihan abir",
+    name: "Dihan abir okay",
     price: 0,
     user: "628f4ed8f4a85a37a8860e01",
-    image: ["/images/sample.jpg", "/images/sample.jpg", "/images/sample.jpg"],
+    image:
+      "https://images.unsplash.com/photo-1631880383152-f29099b0fd16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=887&q=80",
     brand: "Sample brand",
     category: "Sample category",
     countInStock: 0,

@@ -4,6 +4,7 @@ const path = require("path");
 const connectDB = require("./config/db");
 const colors = require("colors");
 const morgan = require("morgan");
+var cors = require("cors");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 const productRouter = require("./routes/productRouter");
@@ -14,7 +15,7 @@ const res = require("express/lib/response");
 
 const app = express();
 
-app.use(morgan("dev"));
+app.use(cors());
 
 // if(process.env.NODE_ENV === 'development'){
 //     app.use(morgan('dev'))
