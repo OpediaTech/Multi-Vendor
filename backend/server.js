@@ -11,6 +11,8 @@ const productRouter = require("./routes/productRouter");
 const userRouter = require("./routes/userRouter");
 const orderRouter = require("./routes/orderRouter");
 const uploadRoutes = require("./routes/uploadRoutes");
+const addressRoutes = require("./routes/addressRoutes");
+const storeRoutes = require("./routes/storeRoutes");
 const res = require("express/lib/response");
 
 const app = express();
@@ -34,6 +36,8 @@ app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/upload", uploadRoutes);
+app.use("/api/address", addressRoutes);
+app.use("/api/store", storeRoutes);
 app.use("/init", uploadRoutes); //url: http://localhost:5000/init/t
 
 app.get("/api/config/paypal", (req, res) => {
