@@ -10,12 +10,14 @@ const {
   createProductReview,
   getTopProducts,
   getCategories,
+  Stripehandler,
   getAllCategories,
 } = require("../controllers/productController");
 
 const { protect, admin } = require("../middleware/authMiddleware");
 
 router.route("/").get(getProducts).post(createProduct);
+router.route("/payment").post(Stripehandler);
 // router.route('/').get(getProducts).post(protect, admin, createProduct);
 router.get("/top", getTopProducts);
 router.get("/allcategory/", getAllCategories);

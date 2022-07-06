@@ -1,6 +1,10 @@
 const asyncHandler = require("express-async-handler");
 const Product = require("../models/productModel");
-
+const stripe = require("stripe")(
+  "sk_test_51L2pj4JsstQNEHZrVKGXwGV2lLAGBGUMmkDla3oHx1oWqgLPW7CmUEtShbiBpAzRquDoMHlHRQmPrLjCetKrpzk000hIULFMI7"
+);
+const { v4: uuid } = require("uuid");
+const { strip } = require("colors");
 // @desc Fetch all products
 // @route GET /api/products/
 // @access Public.
@@ -216,6 +220,43 @@ const getTopProducts = asyncHandler(async (req, res) => {
   res.json(products);
 });
 
+// stripe section
+
+const Stripehandler = asyncHandler(async (req, res) => {
+  const { product, token } = req.body;
+  const implementedKey = uuid();
+
+  // console.log("dalwat mia", req.body);
+  console.log("token.email", product?.price);
+  console.log("token.productby", product?.productby);
+
+  await stripe.customers
+    .create({
+      email: token?.email,
+      source: token?.id,
+    })
+    .then(async (customer) => {
+      await stripe.charges.create({
+        amount: product?.price * 100,
+        currency: "usd",
+        customer: customer.id,
+        description: `Product charge for ${product?.name}`,
+        shipping: {
+          name: token?.card.name,
+          address: {
+            country: token?.card.address_country,
+          },
+        },
+      });
+    })
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 module.exports = {
   getProducts,
   getProductById,
@@ -226,4 +267,5 @@ module.exports = {
   getTopProducts,
   getCategories,
   getAllCategories,
+  Stripehandler,
 };
