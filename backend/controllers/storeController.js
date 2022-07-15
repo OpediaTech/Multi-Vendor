@@ -1,4 +1,6 @@
 const asyncHandler = require("express-async-handler");
+const products = require("../data/products");
+const Product = require("../models/productModel");
 const Store = require("../models/storeModel");
 
 // @desc Create new order
@@ -30,7 +32,7 @@ const getStore = asyncHandler(async (req, res) => {
     res.status(200);
     throw new Error("Order list is empty..");
   }
-  res.json({ ListS: store });
+  res.json({ "ListS ALl Store": store });
 });
 
 // @desc Get order by ID
@@ -38,9 +40,12 @@ const getStore = asyncHandler(async (req, res) => {
 // @access Private
 const getStoreById = asyncHandler(async (req, res) => {
   const store = await Store.findById(req.params.id);
+  console.log("Params: ", req.params.id);
+  const products = await Product.find({ store: `${req.params.id}` });
+  console.log("products: ", products);
 
   if (store) {
-    res.json(store);
+    res.status(200).json({ store, "ALl Products:": products });
   } else {
     res.status(404);
     throw new Error("Order Not Found");

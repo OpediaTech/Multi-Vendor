@@ -11,6 +11,7 @@ const products = [
     countInStock: 1,
     rating: 4.5,
     numReviews: 12,
+    store: "62d0fd23661bd648f8782694",
   },
   {
     name: "iPhone 11 Pro 256GB Memory",
@@ -24,6 +25,7 @@ const products = [
     countInStock: 7,
     rating: 4.0,
     numReviews: 8,
+    store: "62d0fd23661bd648f8782694",
   },
   {
     name: "Cannon EOS 80D DSLR Camera",
@@ -37,6 +39,7 @@ const products = [
     countInStock: 5,
     rating: 3,
     numReviews: 12,
+    store: "62c1840c2386a4313490a069",
   },
   {
     name: "Sony Playstation 4 Pro White Version",
@@ -50,6 +53,8 @@ const products = [
     countInStock: 11,
     rating: 5,
     numReviews: 8,
+
+    store: "62d0fd23661bd648f8782694",
   },
   {
     name: "Logitech G-Series Gaming Mouse",
@@ -63,6 +68,7 @@ const products = [
     countInStock: 7,
     rating: 3.5,
     numReviews: 10,
+    store: "62d0fbe1661bd648f8782690",
   },
   {
     name: "Amazon Echo Dot 3rd Generation",
@@ -76,6 +82,7 @@ const products = [
     countInStock: 0,
     rating: 4,
     numReviews: 12,
+    store: "62d0fc1f661bd648f8782691",
   },
   ///@ts-check
   {
@@ -90,6 +97,7 @@ const products = [
     countInStock: 1,
     rating: 4.5,
     numReviews: 12,
+    store: "62d0fc1f661bd648f8782691",
   },
   {
     name: "iPhone 11 Pro 256GB Memory",
@@ -103,6 +111,8 @@ const products = [
     countInStock: 7,
     rating: 4.0,
     numReviews: 8,
+
+    store: "62d0fc93661bd648f8782692",
   },
   {
     name: "Cannon EOS 80D DSLR Camera",
@@ -116,6 +126,7 @@ const products = [
     countInStock: 5,
     rating: 3,
     numReviews: 12,
+    store: "62d0fca7661bd648f8782693",
   },
   {
     name: "Sony Playstation 4 Pro White Version",
@@ -129,6 +140,8 @@ const products = [
     countInStock: 11,
     rating: 5,
     numReviews: 8,
+
+    store: "62d0fc93661bd648f8782692",
   },
   {
     name: "Logitech G-Series Gaming Mouse",
@@ -142,6 +155,7 @@ const products = [
     countInStock: 7,
     rating: 3.5,
     numReviews: 10,
+    store: "62d0fc1f661bd648f8782691",
   },
   {
     name: "Logitech G-Series Gaming Mouse",
@@ -155,6 +169,7 @@ const products = [
     countInStock: 7,
     rating: 3.5,
     numReviews: 10,
+    store: "62d0fd23661bd648f8782694",
   },
   {
     name: "Amazon Echo Dot 3rd Generation",
@@ -168,6 +183,7 @@ const products = [
     countInStock: 0,
     rating: 4,
     numReviews: 12,
+    store: "62d0fc93661bd648f8782692",
   },
   {
     name: "Amazon Echo Dot 3rd Generation",
@@ -181,6 +197,7 @@ const products = [
     countInStock: 0,
     rating: 4,
     numReviews: 12,
+    store: "62d0fd23661bd648f8782694",
   },
 ];
 

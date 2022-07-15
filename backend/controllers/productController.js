@@ -42,6 +42,32 @@ const getProductById = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc Fetch a single product
+// @route GET /api/products/search/:search
+// @access Public.
+const getSearchProducts = asyncHandler(async (req, res) => {
+  const searchKey = req.params.search.toLowerCase();
+  console.log(searchKey);
+  const product = await Product.find({});
+
+  // var text = "Airpods Wireless Bluetooth Headphones";
+  // var resu = text.includes("Airpods");
+  // console.log(resu);
+  // const allSearchedProducts = product.filter((i) => console.log(typeof i.name));
+  const allSearchedProducts = product.filter((i) => {
+    const mainname = i.name.toLowerCase();
+    return mainname.includes(searchKey) && i;
+  });
+  console.log(allSearchedProducts);
+
+  if (product) {
+    res.status(200).json({ total: product.length, allSearchedProducts });
+  } else {
+    res.status(404);
+    throw new Error("Product not found");
+  }
+});
+
 // @desc    Fetch all category
 // @route   GET /api/products/allcategory/
 // @access  Public
@@ -112,6 +138,7 @@ const createProduct = asyncHandler(async (req, res) => {
     countInStock,
     numReviews,
     description,
+    store,
   } = req.body;
 
   // const product = new Product({
@@ -137,6 +164,7 @@ const createProduct = asyncHandler(async (req, res) => {
     countInStock: 0,
     numReviews: 0,
     description: "Sample Description",
+    store: "62d0fd23661bd648f8782694",
   });
 
   const createProduct = await product.save();
@@ -268,4 +296,5 @@ module.exports = {
   getCategories,
   getAllCategories,
   Stripehandler,
+  getSearchProducts,
 };
