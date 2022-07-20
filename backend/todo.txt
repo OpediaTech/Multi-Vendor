@@ -1,9 +1,18 @@
-**Login / Authintication
-login user wse
-change user profile and manymore 
-authintication needed 
+1. Forgot password 
 
 **Search / Filter
-category wise filter 
-title wise filter
-key wise filter
+category-wise filter
+
+
+
+
+graph ql cheatsheet 
+
+there are two type of method exist in graphQL
+one is query methos and another one is mutation
+
+Query method is simple get method in graphql But In graphql Mutation are making a next level thing in graphql, 
+But for sack of simplecity we can said Mutation is some thing which is handeling POST, PUT, DELETE request with one Method called "MUTATION"
+
+
+

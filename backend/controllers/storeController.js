@@ -32,7 +32,7 @@ const getStore = asyncHandler(async (req, res) => {
     res.status(200);
     throw new Error("Order list is empty..");
   }
-  res.json({ "ListS ALl Store": store });
+  res.json( store );
 });
 
 // @desc Get order by ID
@@ -45,7 +45,7 @@ const getStoreById = asyncHandler(async (req, res) => {
   console.log("products: ", products);
 
   if (store) {
-    res.status(200).json({ store, "ALl Products:": products });
+    res.status(200).json({ store, dataLength: products.length, data: products });
   } else {
     res.status(404);
     throw new Error("Order Not Found");
