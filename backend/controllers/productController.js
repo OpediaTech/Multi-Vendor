@@ -294,7 +294,7 @@ const getTopProducts = asyncHandler(async (req, res) => {
 
 const Stripehandler = asyncHandler(async (req, res) => {
     const {product} = req.body
-    console.log(product)
+    console.log("Prdt",product)
 
   try {
     const session = await stripe.checkout.sessions.create({
